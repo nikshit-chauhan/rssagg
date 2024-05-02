@@ -10,8 +10,8 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/go-chi/cors"
 	"github.com/joho/godotenv"
+	_ "github.com/lib/pq"
 	"github.com/nikshit-chauhan/rssagg/internal/database"
-	_"github.com/lib/pq"
 )
 
 type apiConfig struct {
@@ -37,7 +37,6 @@ func main() {
 
 	apiCfg := apiConfig{
 		DB: database.New(conn),
-		
 	}
 
 	router := chi.NewRouter()
